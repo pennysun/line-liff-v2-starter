@@ -142,14 +142,14 @@ function registerButtonHandlers() {
                     },
                 "actions": [
                     {
-                        "type": "postback",
+                        "type": "uri",
                         "label": "Buy",
-                        "data": "action=buy&itemid=123"
+                        "data": "http://example.com/page/123"
                     },
                     {
-                        "type": "postback",
+                        "type": "uri",
                         "label": "Add to cart",
-                        "data": "action=add&itemid=123"
+                        "data": "http://example.com/page/123"
                     },
                     {
                         "type": "uri",
