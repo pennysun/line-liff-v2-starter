@@ -125,39 +125,8 @@ function registerButtonHandlers() {
             sendAlertIfNotInClient();
         } else {
             liff.sendMessages([{
-                "type": "template",
-                "altText": "This is a buttons template",
-                "template": {
-                    "type": "buttons",
-                    "thumbnailImageUrl": "https://example.com/bot/images/image.jpg",
-                    "imageAspectRatio": "rectangle",
-                    "imageSize": "cover",
-                    "imageBackgroundColor": "#FFFFFF",
-                    "title": "Menu",
-                    "text": "Please select",
-                    "defaultAction": {
-                        "type": "uri",
-                        "label": "View detail",
-                        "uri": "http://example.com/page/123"
-                    },
-                "actions": [
-                    {
-                        "type": "uri",
-                        "label": "Buy",
-                        "data": "http://example.com/page/123"
-                    },
-                    {
-                        "type": "uri",
-                        "label": "Add to cart",
-                        "data": "http://example.com/page/123"
-                    },
-                    {
-                        "type": "uri",
-                        "label": "View detail",
-                        "uri": "http://example.com/page/123"
-                    }
-                    ]
-                }
+                'type': 'text',
+                'text': "我想問關於單戀 過去抽到愚人 現在抽到寶劍皇后 未來抽到聖杯國王"
             }]).then(function() {
                 window.alert('Message sent');
             }).catch(function(error) {
