@@ -62,13 +62,15 @@ function initializeLiff(myLiffId) {
  * Initialize the app by calling functions handling individual app components
  */
 function initializeApp() {
-    registerButtonHandlers();
+    let urlType = new URLSearchParams(window.location.search);
+    type = urlType.toString();
+    registerButtonHandlers(type);
 }
 
 /**
 * Register event handlers for the buttons displayed in the app
 */
-function registerButtonHandlers() {
+function registerButtonHandlers(type) {
 
     // closeWindow call
     document.getElementById('closeWindowButton').addEventListener('click', function() {
@@ -84,9 +86,25 @@ function registerButtonHandlers() {
         if (!liff.isInClient()) {
             sendAlertIfNotInClient();
         } else {
+            q_type = ''
+            if (type='type=one-side') {
+                q_type = '單戀'
+            } else if (type='type=divorce') {
+                q_type = '離婚'
+            } else if (type='type=single') {
+                q_type = '單身'
+            } else if (type='type=cheat') {
+                q_type = '劈腿'
+            } else if (type='type=ambiguous') {
+                q_type = '曖昧'
+            } else if (type='type=marry') {
+                q_type = '結婚'
+            } else if (type='type=make-up') {
+                q_type = '復合'
+            }
             liff.sendMessages([{
                 'type': 'text',
-                'text': "我想問關於單戀 過去抽到愚人 現在抽到寶劍皇后 未來抽到聖杯國王"
+                'text': '我想問關於'+q_type+' 過去抽到愚人 現在抽到寶劍皇后 未來抽到聖杯國王'
             }]).then(function() {
                 window.alert('Message sent');
             }).catch(function(error) {
