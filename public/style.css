@@ -30,6 +30,10 @@ button {
     margin: 4px;
 }
 
+body {
+    background: rgb(195, 181, 194);
+}
+
 #code-block {
     background-color: #eee;
     border: 1px solid #999;
