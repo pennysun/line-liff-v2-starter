@@ -34,6 +34,16 @@ body {
     background: rgb(195, 181, 194);
 }
 
+.buttons img, .buttons input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+}
+.buttons img {
+    height: 200px;
+}
+
 #code-block {
     background-color: #eee;
     border: 1px solid #999;
