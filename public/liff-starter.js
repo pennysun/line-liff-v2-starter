@@ -73,6 +73,7 @@ function initializeApp() {
 function registerButtonHandlers(type) {
 
     // closeWindow call
+    var close_e = document.getElementById('closeWindowButton');
     document.getElementById('closeWindowButton').addEventListener('click', function() {
         if (!liff.isInClient()) {
             sendAlertIfNotInClient();
@@ -106,7 +107,9 @@ function registerButtonHandlers(type) {
                 'type': 'text',
                 'text': '我想問關於'+q_type+' 過去抽到愚人 現在抽到寶劍皇后 未來抽到聖杯國王'
             }]).then(function() {
-                window.alert(q_type+' Message sent');
+                if (close_e.style.display === 'none') {
+                    close_e.style.display = 'block';
+                }
             }).catch(function(error) {
                 window.alert('Error sending message: ' + error);
             });
